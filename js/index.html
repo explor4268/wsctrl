@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+    </style>
+    <title>wsctrl</title>
+</head>
+<body>
+    <canvas id="cnv" style="touch-action:none" width="320" height="320"></canvas>
+    <button style="width:48%;height:100px;" ontouchstart="sclick('ls')" ontouchend="sclick('le')">LCLICK</button>
+    <button style="width:48%;height:100px;" ontouchstart="sclick('rs')" ontouchend="sclick('re')">RCLICK</button>
+    <br>
+    <button onclick="toggleMotion(event.target)">Motion mode: OFF</button>
+    <br><span>Sensitivity:</span><br>
+    <span>Touch</span><input type="range" oninput="updateSensitivity(0,event.target.value)" min=1 max=100 step=1 value=50><br>
+    <span>Motion</span><input type="range" oninput="updateSensitivity(1,event.target.value)" min=1 max=100 step=1 value=25>
+    <script src="client.js"></script>
+</body>
+</html>
